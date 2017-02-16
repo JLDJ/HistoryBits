@@ -13,7 +13,7 @@ import { PostPage } from '../pages/post/post';
 import { SignInPage} from '../pages/sign-in/sign-in';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { SearchPage } from '../pages/search/search';
-
+import { AfterViewInit} from '@angular/core/index';
 
 
 @Component({
@@ -31,7 +31,7 @@ export class MyApp {
   //  this.nav.push(SignInPage);
  // }
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, public menuCtrl: MenuController) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -40,20 +40,22 @@ export class MyApp {
       Splashscreen.hide();
     });
 
+
+
+   // ngAfterViewInit() {
+    // Let's navigate from TabsPage to Page1
+  //  this.nav.push(SignInPage);
+ // }
+
     this.pages = [
-      { title: 'Home', component: TabsPage },
-      { title: 'Profile', component: ProfilePage },
-      { title: 'Post', component: PostPage },
       { title: 'About', component: AboutPage },
       { title: 'Settings', component: SettingsPage},
       { title: 'Contact', component: ContactPage },
       { title: 'Favorites', component: FavoritesPage },
-      { title: 'Search', component: SearchPage }
     ];
   }
    openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
     this.nav.push(page.component);
-  }    
+    this.menuCtrl.close();
+  }  
 }

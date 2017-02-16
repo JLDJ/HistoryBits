@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { Nav, Platform } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
+
 
 /*
   Generated class for the Search page.
@@ -12,11 +16,28 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'search.html'
 })
 export class SearchPage {
+   @ViewChild(Nav) nav: Nav;
+
+   search: any[] = [];
+   who: string;
+   what: string;
+   where: string;
+   when: string;
+   type: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
+  submitSearch(){
+    console.log('Search Submitted');
+    //this.nav.push(HomePage);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
+  }
+
+  test(testValue){
+    console.log(this.who)
   }
 
 }

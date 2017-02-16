@@ -6,6 +6,8 @@ import { ContactPage } from '../contact/contact';
 import { ProfilePage } from '../profile/profile';
 import { SettingsPage} from '../settings/settings';
 import { PostPage} from '../post/post';
+import { SearchPage} from '../search/search';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class TabsPage {
   tab1Root: any = HomePage;
   tab2Root: any = ProfilePage;
   tab3Root: any = PostPage;
-  tab4Root: any = AboutPage;
+  tab4Root: any = SearchPage;
   tab5Root: any = SettingsPage;
 
   constructor() {

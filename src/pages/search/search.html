@@ -7,12 +7,57 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Search</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
+
+
+
 <ion-content padding>
-<h3>Search Content Here</h3>
+  <ion-searchbar>
+</ion-searchbar>
+<h3>Search History Bits Repository</h3>
+<ion-list>
+
+  <ion-item>
+    <ion-label floating>Who?</ion-label>
+    <ion-input type="text" [(ngModel)] = "who" (click)="test()"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>What?</ion-label>
+    <ion-input type="text" [(ngModel)] = "what"></ion-input>
+
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Where?</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+
+    <ion-label floating>When?</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label>What type of History?</ion-label>
+    <ion-select multiple="true" cancelText="Cancel" okText="Select">
+      <ion-option value="picture" checked="true">Picture</ion-option>
+      <ion-option value="story">Story</ion-option>
+    </ion-select>
+  </ion-item>
+
+</ion-list>
+
+
+<button ion-button full (click)="submitSearch()">Submit Search</button>
+
+ 
+
 </ion-content>

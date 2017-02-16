@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { PictureTemplatePage } from '../picture-template/picture-template';
+import { StoryTemplatePage } from '../story-template/story-template';
 
 /*
   Generated class for the Post page.
@@ -13,10 +15,30 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class PostPage {
 
+  pictureTemplate: boolean = false;
+  storyTemplate: boolean = false;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostPage');
+  }
+
+  setPictureTemplate(){
+    this.storyTemplate = false;
+    this.pictureTemplate = true;
+    console.log("User selected picture template.");
+  }
+
+  setStoryTemplate(){
+    this.pictureTemplate = false;
+    this.storyTemplate = true;
+    console.log("User selected story template");
+  }
+
+  openCamera(){
+    console.log("Opening Camera");
   }
 
 }

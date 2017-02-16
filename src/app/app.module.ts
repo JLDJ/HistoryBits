@@ -9,9 +9,13 @@ import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage} from '../pages/settings/settings';
 import { PostPage } from '../pages/post/post';
 import { SignInPage} from '../pages/sign-in/sign-in';
+import { PictureTemplatePage } from '../pages/picture-template/picture-template';
+import { StoryTemplatePage } from '../pages/story-template/story-template';
 import { NavController } from 'ionic-angular';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { SearchPage } from '../pages/search/search';
+import { AfterViewInit} from '@angular/core/index';
+
 
 
 @NgModule({
@@ -26,10 +30,12 @@ import { SearchPage } from '../pages/search/search';
     PostPage,
     SignInPage,
     FavoritesPage,
-    SearchPage
+    SearchPage,
+    PictureTemplatePage,
+    StoryTemplatePage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +49,9 @@ import { SearchPage } from '../pages/search/search';
     PostPage,
     SignInPage,
     FavoritesPage,
-    SearchPage
+    SearchPage,
+    PictureTemplatePage,
+    StoryTemplatePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

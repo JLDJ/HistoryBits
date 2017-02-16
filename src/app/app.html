@@ -1,4 +1,4 @@
-<ion-menu [content]="nav">
+<ion-menu [content]="nav" persistant="true">
  
 <!-- The side menu title 
   <ion-toolbar>
@@ -16,9 +16,10 @@
       </button>
     </ion-list>
   </ion-content>
- 
 </ion-menu>
 <!-- What's my root? remember the this.rootPage? -->
 <ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
+
+
 
 
