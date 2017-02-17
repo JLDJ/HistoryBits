@@ -37,17 +37,17 @@
   </ion-item>
   <ion-item>
     <ion-label floating>Where?</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)] = "where"></ion-input>
   </ion-item>
   <ion-item>
 
     <ion-label floating>When?</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]= "when"></ion-input>
   </ion-item>
 
    <ion-item>
     <ion-label>What type of History?</ion-label>
-    <ion-select multiple="true" cancelText="Cancel" okText="Select">
+    <ion-select multiple="true" cancelText="Cancel" okText="Select" [(ngModel)]="type">
       <ion-option value="picture" checked="true">Picture</ion-option>
       <ion-option value="story">Story</ion-option>
     </ion-select>
@@ -56,7 +56,7 @@
 </ion-list>
 
 
-<button ion-button full (click)="submitSearch()">Submit Search</button>
+<button ion-button full (click)="submitSearch()"><ion-icon name="search">  Submit Search</ion-icon></button>
 
  
 

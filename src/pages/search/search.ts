@@ -18,7 +18,9 @@ import { TabsPage } from '../tabs/tabs';
 export class SearchPage {
    @ViewChild(Nav) nav: Nav;
 
-   search: any[] = [];
+   
+   //Need to create a Key / Value pair array here....
+
    who: string;
    what: string;
    where: string;
@@ -29,6 +31,7 @@ export class SearchPage {
 
   submitSearch(){
     console.log('Search Submitted');
+    console.log('Display Search Parameters here');
     //this.nav.push(HomePage);
   }
 
@@ -37,7 +40,7 @@ export class SearchPage {
   }
 
   test(testValue){
-    console.log(this.who)
+    console.log(this.who);
   }
 
 }

@@ -14,6 +14,7 @@ import { SignInPage} from '../pages/sign-in/sign-in';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { SearchPage } from '../pages/search/search';
 import { AfterViewInit} from '@angular/core/index';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -24,7 +25,13 @@ export class MyApp {
 
   rootPage = TabsPage;
 
-  pages: Array<{title: string, component: any}>;
+  AboutPage = AboutPage;
+  SettingsPage = SettingsPage;
+  ContactPage = ContactPage;
+  FavoritesPage = FavoritesPage;
+  SignInPage = SignInPage;
+
+  
 
  // ngAfterViewInit() {
     // Let's navigate from TabsPage to Page1
@@ -46,16 +53,17 @@ export class MyApp {
     // Let's navigate from TabsPage to Page1
   //  this.nav.push(SignInPage);
  // }
-
-    this.pages = [
-      { title: 'About', component: AboutPage },
-      { title: 'Settings', component: SettingsPage},
-      { title: 'Contact', component: ContactPage },
-      { title: 'Favorites', component: FavoritesPage },
-    ];
   }
-   openPage(page) {
-    this.nav.push(page.component);
+   openPage(page: Component) {
+    console.log("Opening page: " + page)
+    this.nav.push(page);
     this.menuCtrl.close();
   }  
+
+  signOut(){
+    //Need splash page until logout is successful
+    console.log("Signing out")
+    this.nav.push(SignInPage);
+  }
+
 }

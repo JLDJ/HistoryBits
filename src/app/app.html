@@ -11,9 +11,30 @@
       // Iterate through, then when clicked, run the associated function
       // passing in the #p item.
       // changed #p to let p instead -->
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button ion-item (click)="openPage(AboutPage)">
+        <ion-icon name="information-circle" item-left></ion-icon>
+        About
       </button>
+      <button ion-item (click)="openPage(SettingsPage)">
+        <ion-icon name="settings" item-left></ion-icon>
+        Settings
+      </button>
+      <button ion-item (click)="openPage(ContactPage)">
+        <ion-icon name="contacts" item-left></ion-icon>
+        Contact
+      </button>
+      <button ion-item (click)="openPage(FavoritesPage)">
+        <ion-icon name="bookmark" item-left></ion-icon>
+        Favorites
+      </button>
+      <button ion-item (click)="openPage(SignInPage)">
+        <ion-icon name="log-in" item-left></ion-icon>
+        Login Test
+        </button>
+      <button ion-item (click)="signOut()">
+        <ion-icon name="log-out" item-left></ion-icon>
+          Sign Out
+          </button>
     </ion-list>
   </ion-content>
 </ion-menu>

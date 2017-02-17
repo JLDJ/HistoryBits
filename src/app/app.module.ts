@@ -15,6 +15,7 @@ import { NavController } from 'ionic-angular';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { SearchPage } from '../pages/search/search';
 import { AfterViewInit} from '@angular/core/index';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -35,6 +36,7 @@ import { AfterViewInit} from '@angular/core/index';
     StoryTemplatePage
   ],
   imports: [
+    FormsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
