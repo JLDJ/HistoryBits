@@ -16,14 +16,16 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-title padding>What type of History?</ion-title>
+  <ion-title padding text-center>What type of History?</ion-title>
     <button ion-button full (click)="setPictureTemplate()"><ion-icon name="image" >  Picture</ion-icon></button>
     <div full padding-bottom></div>
     <button ion-button full (click)="setStoryTemplate()"><ion-icon name="book">  Story</ion-icon></button>
+    Latest Picture:
+      <img [src]="base64Image" *ngIf="base64Image" />
 </ion-content>
 
-<ion-footer>
-  <button ion-button full (click)="openCamera()"><ion-icon name="camera">  Open Camera</ion-icon></button>
+<ion-footer text-center>
+  <button text-center ion-button (click)="openCamera()"><ion-icon name="camera">  Open Camera</ion-icon></button>
 </ion-footer>
 <!-- <page-story-template></page-story-template>
 <page-picture-template></page-picture-template> -->

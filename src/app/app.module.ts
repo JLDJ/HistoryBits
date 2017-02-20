@@ -16,6 +16,7 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { SearchPage } from '../pages/search/search';
 import { AfterViewInit} from '@angular/core/index';
 import { FormsModule } from '@angular/forms';
+import {Camera} from 'ionic-native';
 
 
 

@@ -8,9 +8,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomePage {
   title = "Home";
-
+  likeCount = 0;
   constructor(public navCtrl: NavController) {
 
+  }
+
+  liked(){
+    this.likeCount++;
   }
 
 }

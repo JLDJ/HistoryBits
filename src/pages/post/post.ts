@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PictureTemplatePage } from '../picture-template/picture-template';
 import { StoryTemplatePage } from '../story-template/story-template';
+import {Camera} from 'ionic-native';
 
 /*
   Generated class for the Post page.
@@ -15,6 +16,7 @@ import { StoryTemplatePage } from '../story-template/story-template';
 })
 export class PostPage {
 
+  public base64Image: string;
   pictureTemplate: boolean = false;
   storyTemplate: boolean = false;
 
@@ -39,6 +41,16 @@ export class PostPage {
 
   openCamera(){
     console.log("Opening Camera");
+     Camera.getPicture({
+        destinationType: Camera.DestinationType.DATA_URL,
+        targetWidth: 1000,
+        targetHeight: 1000
+    }).then((imageData) => {
+      // imageData is a base64 encoded string
+        this.base64Image = "data:image/jpeg;base64," + imageData;
+    }, (err) => {
+        console.log(err);
+    });
+  }
   }
 
-}
