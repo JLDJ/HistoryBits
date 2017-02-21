@@ -22,8 +22,9 @@
     <button ion-button full (click)="setStoryTemplate()"><ion-icon name="book">  Story</ion-icon></button>
     Latest Picture:<!-- .dataURL? try -->
       <img [src]="base64Image" *ngIf="base64Image" />
-      <img [src]="imageSrc" />
-      {{base64Image}}
+      Base64 / Take Picture: {{base64Image}}
+      <img [src]="imageSrc" *ngIf="imageSrc" />
+      imageSrc / ImagePicker {{imageSrc}}
 </ion-content>
 
 <ion-footer text-center>

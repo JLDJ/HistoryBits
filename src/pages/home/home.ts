@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
+import { PictureCardPage } from '../picture-card/picture-card';
+
 
 @Component({
   selector: 'page-home',
