@@ -20,8 +20,10 @@
     <button ion-button full (click)="setPictureTemplate()"><ion-icon name="image" >  Picture</ion-icon></button>
     <div full padding-bottom></div>
     <button ion-button full (click)="setStoryTemplate()"><ion-icon name="book">  Story</ion-icon></button>
-    Latest Picture:
+    Latest Picture:<!-- .dataURL? try -->
       <img [src]="base64Image" *ngIf="base64Image" />
+      <img [src]="imageSrc" />
+      {{base64Image}}
 </ion-content>
 
 <ion-footer text-center>

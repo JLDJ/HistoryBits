@@ -19,4 +19,15 @@ export class SignInPage {
     console.log('ionViewDidLoad SignInPage');
   }
 
+  facebook(){
+    console.log("Signing in with facebook");
+  }
+
+  twitter(){
+    console.log("Signing in with twitter");
+  }
+
+  google(){
+    console.log("Signing in with google");
+  }
 }
