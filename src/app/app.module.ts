@@ -17,6 +17,8 @@ import { SearchPage } from '../pages/search/search';
 import { AfterViewInit} from '@angular/core/index';
 import { FormsModule } from '@angular/forms';
 import {Camera} from 'ionic-native';
+import { PictureCardPage } from '../pages/picture-card/picture-card';
+
 
 
 
@@ -34,7 +36,8 @@ import {Camera} from 'ionic-native';
     FavoritesPage,
     SearchPage,
     PictureTemplatePage,
-    StoryTemplatePage
+    StoryTemplatePage,
+    PictureCardPage
   ],
   imports: [
     FormsModule,
@@ -54,7 +57,8 @@ import {Camera} from 'ionic-native';
     FavoritesPage,
     SearchPage,
     PictureTemplatePage,
-    StoryTemplatePage
+    StoryTemplatePage,
+    PictureCardPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

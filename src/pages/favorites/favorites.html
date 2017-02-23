@@ -59,7 +59,9 @@
     </ion-col>
   </ion-row>
 </ion-card>
-<div innerHTML={{items}}></div>
+<div *ngFor="let cardInfo of cardInfo">
+  <page-picture-card></page-picture-card>
+</div>
 <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
    <ion-infinite-scroll-content threshold="1px"></ion-infinite-scroll-content>
  </ion-infinite-scroll>

@@ -9,10 +9,21 @@ import { PictureCardPage } from '../picture-card/picture-card';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  items = [];
+
+  cardInfo : {
+  username: string,
+  date: string,
+  caption: string,
+  likeCount: number,
+  numberOfComments: number,
+  timeStamp: string,
+  //picture: any,
+  //profilePic: any
+} [] = new Array();
+
   title = "Home";
-  likeCount = 0;
   constructor(public navCtrl: NavController) {
+    //This would be more the initial loading of the news feed
     //for (let i = 0; i < 30; i++) {
      // this.items.push(``);
  // }
@@ -21,46 +32,22 @@ export class HomePage {
   doInfinite(infiniteScroll) {
     console.log('Begin async operation, loading more items for new feed.');
 
+    //Use Web API here to fetch more posts
+    //Grab this JSON data and push it onto an array
+    //Loop through the array grabbing the data and filling in the card/post 
+
     setTimeout(() => {
       for (let i = 0; i < 10; i++) {
-        this.items.push(`<ion-card class="homeCard">
-
-  <ion-item class="homeCard">
-    <ion-avatar item-left>
-      <img src="../assets/pictures/marty-avatar.png">
-    </ion-avatar>
-    <h2>Marty McFly</h2>
-    <p>November 5, 1955</p>
-  </ion-item>
-
-  <img src="../assets/pictures/carpic.png" >
-
-  <ion-card-content>
-    
-    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-  </ion-card-content>
-
-  <ion-row>
-    <ion-col>
-      <button ion-button icon-left clear small (click)="liked()">
-        <ion-icon name="thumbs-up"></ion-icon>
-        <div> Likes {{likeCount}}</div>
-      </button>
-    </ion-col>
-    <ion-col>
-      <!-- May need a popover for comments -->
-      <button ion-button icon-left clear small>
-        <ion-icon name="text"></ion-icon>
-        <div>4 Comments</div>
-      </button>
-    </ion-col>
-    <ion-col center text-center>
-      <ion-note>
-        11h ago
-      </ion-note>
-    </ion-col>
-  </ion-row>
-</ion-card>`);
+          //Dummy Data until we have backend working
+          this.cardInfo.push({
+          username : "Billy Bob",
+          date : "2/22/2017",
+          caption : "The caption goes here",
+          likeCount : 0,
+          numberOfComments : 0,
+          timeStamp : "Posted 3 Hours Ago"
+        })
+          
       }
 
       console.log('Async operation has ended. finished loading items for new feed.');
@@ -69,7 +56,7 @@ export class HomePage {
   }
 
   liked(){
-    this.likeCount++;
+    //this.likeCount++;
   }
 
 }
