@@ -23,17 +23,42 @@ export class HomePage {
   likeCount: number,
   numberOfComments: number,
   timeStamp: string,
-  //isPicture:
+  isPicture: boolean,
+  isStory: boolean,
   //picture: any,
   //profilePic: any
 } [] = new Array();
 
+  pictureAlternate: boolean = true;
+  storyAlternate: boolean = false;
+
   title = "Home";
   constructor(public navCtrl: NavController) {
     //This would be more the initial loading of the news feed
-    //for (let i = 0; i < 30; i++) {
-     // this.items.push(``);
- // }
+  setTimeout(() => {
+      for (let i = 0; i < 5; i++) {
+          //Dummy Data until we have backend working
+          if(this.pictureAlternate){
+            this.pictureAlternate = false;
+            this.storyAlternate = true;
+          }else {
+            this.pictureAlternate = true;
+            this.storyAlternate = false;
+          }
+
+          this.cardInfo.push({
+          username : "Billy Bob",
+          date : "2/22/2017",
+          caption : "The caption goes here",
+          likeCount : 0,
+          numberOfComments : 0,
+          timeStamp : "Posted 3 Hours Ago",
+          isPicture : this.pictureAlternate,
+          isStory : this.storyAlternate
+        })   
+      }
+      console.log('Async operation has ended. finished loading items for new feed.');
+    }, 2000);
   }
 
   doInfinite(infiniteScroll) {
@@ -44,15 +69,25 @@ export class HomePage {
     //Loop through the array grabbing the data and filling in the card/post 
 
     setTimeout(() => {
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 5; i++) {
           //Dummy Data until we have backend working
+          if(this.pictureAlternate){
+            this.pictureAlternate = false;
+            this.storyAlternate = true;
+          }else {
+            this.pictureAlternate = true;
+            this.storyAlternate = false;
+          }
+
           this.cardInfo.push({
           username : "Billy Bob",
           date : "2/22/2017",
           caption : "The caption goes here",
           likeCount : 0,
           numberOfComments : 0,
-          timeStamp : "Posted 3 Hours Ago"
+          timeStamp : "Posted 3 Hours Ago",
+          isPicture : this.pictureAlternate,
+          isStory : this.storyAlternate
         })   
       }
       console.log('Async operation has ended. finished loading items for new feed.');

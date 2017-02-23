@@ -13,11 +13,11 @@
 </ion-searchbar>
 </form>
   <ion-title text-center>News Feed</ion-title>
-<page-picture-card></page-picture-card>
-<page-story-card></page-story-card>
 <div *ngFor="let cardInfo of cardInfo">
-  <page-picture-card></page-picture-card>
+  <page-picture-card *ngIf="cardInfo.isPicture"></page-picture-card>
+  <page-story-card *ngIf="cardInfo.isStory"></page-story-card>
 </div>
+  
 <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
    <ion-infinite-scroll-content></ion-infinite-scroll-content>
  </ion-infinite-scroll>

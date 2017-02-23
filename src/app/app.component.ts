@@ -25,7 +25,6 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage = TabsPage;
-
   AboutPage = AboutPage;
   SettingsPage = SettingsPage;
   ContactPage = ContactPage;

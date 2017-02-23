@@ -23,13 +23,44 @@ export class FavoritesPage {
   likeCount: number,
   numberOfComments: number,
   timeStamp: string,
+  isPicture: boolean,
+  isStory: boolean,
   //picture: any,
   //profilePic: any
 } [] = new Array();
+
+
+  pictureAlternate: boolean = true;
+  storyAlternate: boolean = false;
+
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-   // for (let i = 0; i < 30; i++) {
-   //   this.items.push( this.items.length );
-  //}
+     //This would be more the initial loading of the news feed
+  setTimeout(() => {
+      for (let i = 0; i < 5; i++) {
+          //Dummy Data until we have backend working
+          if(this.pictureAlternate){
+            this.pictureAlternate = false;
+            this.storyAlternate = true;
+          }else {
+            this.pictureAlternate = true;
+            this.storyAlternate = false;
+          }
+
+          this.cardInfo.push({
+          username : "Billy Bob",
+          date : "2/22/2017",
+          caption : "The caption goes here",
+          likeCount : 0,
+          numberOfComments : 0,
+          timeStamp : "Posted 3 Hours Ago",
+          isPicture : this.pictureAlternate,
+          isStory : this.storyAlternate
+        })   
+      }
+      console.log('Async operation has ended. finished loading items for new feed.');
+    }, 2000);
   }
 
   ionViewDidLoad() {
@@ -42,6 +73,15 @@ export class FavoritesPage {
 
     setTimeout(() => {
       for (let i = 0; i < 10; i++) {
+
+            if(this.pictureAlternate){
+            this.pictureAlternate = false;
+            this.storyAlternate = true;
+          }else {
+            this.pictureAlternate = true;
+            this.storyAlternate = false;
+          }
+
           //Dummy Data until we have backend working
           this.cardInfo.push({
           username : "Billy Bob",
@@ -49,7 +89,9 @@ export class FavoritesPage {
           caption : "The caption goes here",
           likeCount : 0,
           numberOfComments : 0,
-          timeStamp : "Posted 3 Hours Ago"
+          timeStamp : "Posted 3 Hours Ago",
+          isPicture : this.pictureAlternate,
+          isStory : this.storyAlternate
         })
           
       }
