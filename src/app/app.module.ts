@@ -18,6 +18,7 @@ import { AfterViewInit} from '@angular/core/index';
 import { FormsModule } from '@angular/forms';
 import {Camera} from 'ionic-native';
 import { PictureCardPage } from '../pages/picture-card/picture-card';
+import { StoryCardPage } from '../pages/story-card/story-card';
 
 
 
@@ -37,7 +38,8 @@ import { PictureCardPage } from '../pages/picture-card/picture-card';
     SearchPage,
     PictureTemplatePage,
     StoryTemplatePage,
-    PictureCardPage
+    PictureCardPage,
+    StoryCardPage
   ],
   imports: [
     FormsModule,
@@ -58,7 +60,8 @@ import { PictureCardPage } from '../pages/picture-card/picture-card';
     SearchPage,
     PictureTemplatePage,
     StoryTemplatePage,
-    PictureCardPage
+    PictureCardPage,
+    StoryCardPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

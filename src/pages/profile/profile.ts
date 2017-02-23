@@ -13,6 +13,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
+   //Need to create components for the profile page and services to fetch the required info
+   bio: string = "Bio goes here..."
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

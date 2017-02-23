@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { PictureCardPage } from '../picture-card/picture-card';
+import { StoryCardPage } from '../story-card/story-card';
+
+
 
 /*
   Generated class for the Favorites page.

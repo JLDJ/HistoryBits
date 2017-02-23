@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
 import { PictureCardPage } from '../picture-card/picture-card';
+import { StoryCardPage } from '../story-card/story-card';
 
+
+//We should have news feed default to posts from around your current area!!! or other specified settings
+//Need to allow users to customise what they see in their news feed
 
 @Component({
   selector: 'page-home',
@@ -10,6 +14,8 @@ import { PictureCardPage } from '../picture-card/picture-card';
 })
 export class HomePage {
 
+  //May need some sort of Post ID to update likes / comments etc...
+  //Need some sort of logic to determine if it is a picture or a story...
   cardInfo : {
   username: string,
   date: string,
@@ -17,6 +23,7 @@ export class HomePage {
   likeCount: number,
   numberOfComments: number,
   timeStamp: string,
+  //isPicture:
   //picture: any,
   //profilePic: any
 } [] = new Array();
@@ -46,10 +53,8 @@ export class HomePage {
           likeCount : 0,
           numberOfComments : 0,
           timeStamp : "Posted 3 Hours Ago"
-        })
-          
+        })   
       }
-
       console.log('Async operation has ended. finished loading items for new feed.');
       infiniteScroll.complete();
     }, 2000);

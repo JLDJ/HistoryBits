@@ -1,0 +1,35 @@
+<ion-card class="homeCard">
+
+  <ion-item class="homeCard">
+    <ion-avatar item-left>
+      <img src="../assets/pictures/marty-avatar.png">
+    </ion-avatar>
+    <h2>{{username}}</h2>
+    <p>{{date}}</p>
+  </ion-item>
+  <ion-card-content>
+    <ion-title text-center>Story</ion-title>
+    <p>{{caption}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="liked()">
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div> Likes: {{likeCount}}</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <!-- May need a popover for comments -->
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{numberOfComments}} Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        {{timeStamp}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+</ion-card>
