@@ -16,6 +16,7 @@ import { SearchPage } from '../pages/search/search';
 import { AfterViewInit} from '@angular/core/index';
 import { FormsModule } from '@angular/forms';
 import {Camera} from 'ionic-native';
+import {newsFeedService} from '../services/newsFeed.service';
 
 
 @Component({

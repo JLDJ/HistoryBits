@@ -19,6 +19,10 @@ import { FormsModule } from '@angular/forms';
 import {Camera} from 'ionic-native';
 import { PictureCardPage } from '../pages/picture-card/picture-card';
 import { StoryCardPage } from '../pages/story-card/story-card';
+import { HttpModule } from '@angular/http';
+import { routing } from './app.routing';
+import { RouterModule, Routes } from '@angular/router';
+
 
 
 
@@ -42,6 +46,8 @@ import { StoryCardPage } from '../pages/story-card/story-card';
     StoryCardPage
   ],
   imports: [
+    routing,
+    HttpModule,
     FormsModule,
     IonicModule.forRoot(MyApp),
   ],
